@@ -3,6 +3,7 @@
     height: 450px;
     position: relative;
     border: 1px solid rgb(5, 5, 5);
+
 }
 .title{
     width: 20%;
@@ -25,4 +26,26 @@
     box-shadow:0 0 20px;
     cursor: pointer;
     opacity: 0.9;
+}
+.DataBody{
+    align-self: center;
+
+    /* border: 2px solid red; */
+    padding: 1rem;
+}
+table{
+    width: 100%;
+    border: 2px solid rgb(5, 5, 58);
+    border-radius: 5px;
+    text-align: center;
+}
+table > tbody{
+    border: 2px solid red;
+}
+.PersonForm{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+
 }
