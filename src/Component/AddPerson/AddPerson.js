@@ -1,4 +1,3 @@
-// AddPerson.js
 import React from "react";
 import "./addPerson.css";
 import { useDataContext } from "../DataContext";
