@@ -1,4 +1,3 @@
-// DataContext.js
 import React, { createContext, useReducer, useContext } from "react";
 
 export const DataContext = createContext();
@@ -11,6 +10,7 @@ const initialState = {
   aadhar: "",
   phoneNum: "",
   age: "",
+  retrieveUserData: [],
 };
 
 const actionTypes = {
@@ -22,6 +22,7 @@ const actionTypes = {
   UPDATE_AADHAR: "UPDATE_AADHAR",
   UPDATE_PHONE_NUM: "UPDATE_PHONE_NUM",
   UPDATE_AGE: "UPDATE_AGE",
+  SET_RETRIEVE_USER_DATA: "SET_RETRIEVE_USER_DATA",
 };
 
 const dataReducer = (state, action) => {
@@ -33,7 +34,9 @@ const dataReducer = (state, action) => {
       localStorage.setItem("userData", JSON.stringify(updatedUserData));
       return { ...state, userData: updatedUserData };
     case actionTypes.DELETE_DATA:
-      const filteredData = state.userData.filter((_, idx) => idx !== action.payload);
+      const filteredData = state.userData.filter(
+        (_, idx) => idx !== action.payload
+      );
       localStorage.setItem("userData", JSON.stringify(filteredData));
       return { ...state, userData: filteredData };
     case actionTypes.UPDATE_USERNAME:
@@ -46,6 +49,8 @@ const dataReducer = (state, action) => {
       return { ...state, phoneNum: action.payload };
     case actionTypes.UPDATE_AGE:
       return { ...state, age: action.payload };
+    case actionTypes.SET_RETRIEVE_USER_DATA:
+      return { ...state, retrieveUserData: action.payload };
     default:
       return state;
   }
