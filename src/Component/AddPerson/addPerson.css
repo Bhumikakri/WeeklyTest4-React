@@ -1,51 +1,56 @@
-.AddPerson{
-    width: 100%;
-    height: 450px;
-    position: relative;
-    border: 1px solid rgb(5, 5, 5);
+.AddPerson {
+  width: 100%;
+  min-height: 450px;
+  height: fit-content;
+  position: relative;
+  border: 1px solid rgb(5, 5, 5);
+}
+.title {
+  width: 20%;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid gray;
+}
+.AddBtn {
+  width: 5.5rem;
+  height: 2rem;
+  position: absolute;
+  right: 2px;
+  bottom: 3px;
+  color: aliceblue;
+  border: none;
+  box-shadow: 2px 4px 4px rgb(74, 74, 75);
+  background-color: rgba(35, 35, 167, 0.911);
+}
+.AddBtn:hover {
+  box-shadow: 0 0 20px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.DataBody {
+  align-self: center;
 
+  /* border: 2px solid red; */
+  padding: 1rem;
 }
-.title{
-    width: 20%;
-    padding: 1rem;
-    text-align: center;
-    border: 1px solid gray;
+table {
+  width: 100%;
+  border: 2px solid rgb(5, 5, 58);
+  border-radius: 5px;
+  text-align: center;
 }
-.AddBtn{
-    width: 5.5rem;
-    height: 2rem;
-    position: absolute;
-    right: 2px;
-    bottom: 3px;
-    color:aliceblue;
-    border: none;
-    box-shadow: 2px 4px 4px rgb(74, 74, 75);
-    background-color:  rgba(35, 35, 167, 0.911);
+table > tbody {
+  border: 2px solid red;
 }
-.AddBtn:hover{
-    box-shadow:0 0 20px;
-    cursor: pointer;
-    opacity: 0.9;
+.PersonForm {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.DataBody{
-    align-self: center;
 
-    /* border: 2px solid red; */
-    padding: 1rem;
-}
-table{
-    width: 100%;
-    border: 2px solid rgb(5, 5, 58);
-    border-radius: 5px;
-    text-align: center;
-}
-table > tbody{
-    border: 2px solid red;
-}
-.PersonForm{
-    /* border: 2px solid red; */
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-
+@media screen and (max-width: 480px) {
+  .title {
+    width: 40%;
+  }
 }

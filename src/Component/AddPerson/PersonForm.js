@@ -40,6 +40,17 @@ const PersonForm = () => {
   const [state, localDispatch] = useReducer(reducer, initialState);
 
   function saveData() {
+
+    if (!state.username || !state.dob || !state.aadhar || !state.phoneNum || !state.age) {
+      alert("Please fill in all the fields before saving.");
+      return;
+    }
+
+    if (state.aadhar.length !== 12 || !/^\d{12}$/.test(state.aadhar)) {
+      alert("Aadhar number must be exactly 12 digits.");
+      return;
+    }
+
     dispatch({ type: actionTypes.SET_WANT_TO_ADD, payload: false });
 
     const newUser = {

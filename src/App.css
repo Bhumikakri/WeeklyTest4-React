@@ -10,3 +10,9 @@
  padding: 4rem;
  padding-top: 1rem;
 }
+
+@media screen and (max-width: 450px) {
+  .Main{
+    padding: 1rem;
+  }
+}
