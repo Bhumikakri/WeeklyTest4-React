@@ -3,6 +3,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Main from './Component/Main/Main';
 import ShowInformation from './Component/ShowData/retriveInfo';
 import AddPerson from './Component/AddPerson/AddPerson';
+import { DataProvider } from "./Component/DataContext";
 
 function App() {
   const routes=createBrowserRouter([
@@ -23,8 +24,9 @@ function App() {
   ])
   return (
     <div className="App">
-      <RouterProvider router={routes}>
-      </RouterProvider>
+      <DataProvider>
+      <RouterProvider router={routes}/>
+      </DataProvider>
     </div>
   );
 }
